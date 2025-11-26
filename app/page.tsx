@@ -2,11 +2,13 @@ import { servicios } from "@/data/servicios";
 import type { Servicio } from "@/types/servicio";
 import Link from "next/link";
 import ServiceCard from "./components/ServiceCard";
+import ImageCarousel from "./components/ImageCarousel";
+import TestimonialsCarousel from "./components/TestimonialsCarousel";
+import FAQAccordion from "./components/FAQAccordion";
 
 const whatsappLink =
   "https://wa.me/573054226304?text=Hola%2C%20quiero%20agendar%20una%20cita%20para%20mi%20auto.%20Vengo%20desde%20la%20p%C3%A1gina%20web.";
 
-const placeholderBlocks = Array.from({ length: 4 });
 const serviciosData = servicios as Servicio[];
 
 export default function Home() {
@@ -71,57 +73,81 @@ export default function Home() {
         id="carrusel"
         className="mx-auto max-w-6xl space-y-4 px-6 sm:px-12"
       >
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-neutral-900">
-            Carrusel de proyectos
+        <div className="space-y-2">
+          <p className="text-sm font-semibold text-amber-600">Galería</p>
+          <h2 className="text-3xl font-semibold text-neutral-900">
+            Nuestro taller en acción
           </h2>
+          <p className="text-neutral-600">
+            Conoce nuestras instalaciones y el trabajo que realizamos día a día.
+          </p>
         </div>
-        <div
-          className="h-64 rounded-3xl border border-dashed border-neutral-300 bg-white/60"
-          aria-label="Carrusel de proyectos en construcción"
-        />
+        <ImageCarousel />
       </section>
 
       <section
         id="testimonios"
-        className="mx-auto max-w-6xl space-y-4 px-6 sm:px-12"
+        className="mx-auto max-w-6xl space-y-6 px-6 sm:px-12"
       >
-        <h2 className="text-2xl font-semibold text-neutral-900">Testimonios</h2>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {placeholderBlocks.slice(0, 2).map((_, index) => (
-            <div
-              key={`testimonial-${index}`}
-              className="h-40 rounded-3xl border border-dashed border-neutral-300 bg-white/60"
-              aria-label={`Espacio reservado para testimonio ${index + 1}`}
-            />
-          ))}
+        <div className="space-y-2">
+          <p className="text-sm font-semibold text-amber-600">Testimonios</p>
+          <h2 className="text-3xl font-semibold text-neutral-900">
+            Lo que dicen nuestros clientes
+          </h2>
+          <p className="text-neutral-600">
+            Miles de vehículos confían en nosotros para su mantenimiento y
+            cuidado.
+          </p>
         </div>
+        <TestimonialsCarousel />
       </section>
 
-      <section id="faq" className="mx-auto max-w-6xl space-y-4 px-6 sm:px-12">
-        <h2 className="text-2xl font-semibold text-neutral-900">
-          Preguntas frecuentes
-        </h2>
-        <div className="space-y-3">
-          {placeholderBlocks.map((_, index) => (
-            <div
-              key={`faq-${index}`}
-              className="h-16 rounded-2xl border border-dashed border-neutral-300 bg-white/60"
-              aria-label={`Pregunta frecuente ${index + 1} pendiente`}
-            />
-          ))}
+      <section
+        id="faq"
+        className="mx-auto max-w-6xl space-y-6 rounded-3xl border border-neutral-200 bg-white px-6 py-10 shadow-sm sm:px-10"
+      >
+        <div className="space-y-2">
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-amber-600">
+            Preguntas frecuentes
+          </p>
+          <h2 className="text-3xl font-semibold text-neutral-900">
+            Resolvemos tus dudas
+          </h2>
+          <p className="text-neutral-600">
+            Encuentra respuestas a las preguntas más comunes sobre nuestros
+            servicios.
+          </p>
         </div>
+        <FAQAccordion />
       </section>
 
       <section
         id="mapa"
-        className="mx-auto max-w-6xl space-y-4 px-6 sm:px-12"
+        className="mx-auto max-w-6xl space-y-6 px-6 sm:px-12"
       >
-        <h2 className="text-2xl font-semibold text-neutral-900">Mapa</h2>
-        <div
-          className="h-80 rounded-3xl border border-dashed border-neutral-300 bg-white/60"
-          aria-label="Mapa pendiente"
-        />
+        <div className="space-y-2">
+          <p className="text-sm font-semibold text-amber-600">Ubicación</p>
+          <h2 className="text-3xl font-semibold text-neutral-900">
+            Visítanos en nuestro taller
+          </h2>
+          <p className="text-neutral-600">
+            Estamos ubicados en el corazón de Medellín, con fácil acceso y
+            estacionamiento.
+          </p>
+        </div>
+        <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
+          <iframe
+            title="Ubicación Clínica Automotriz"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9999999999995!2d-75.577!3d6.251999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCl%C3%ADnica%20Automotriz!5e0!3m2!1ses-419!2sco!4v1700000000000"
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="h-80 w-full sm:h-96"
+          />
+        </div>
       </section>
     </div>
   );

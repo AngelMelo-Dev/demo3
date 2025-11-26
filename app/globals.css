@@ -28,3 +28,13 @@ a {
 main {
   width: 100%;
 }
+
+/* Ocultar scrollbar en carruseles */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
