@@ -14,11 +14,12 @@ export default function TestimonialsCarousel() {
     const interval = setInterval(() => {
       if (carouselRef.current) {
         const scrollLeft = carouselRef.current.scrollLeft;
-        const scrollWidth = carouselRef.current.scrollWidth;
-        const clientWidth = carouselRef.current.clientWidth;
-        const nextScroll = scrollLeft + clientWidth;
+        const cardWidth = 300 + 16; // min-w-[300px] + gap-4 (16px)
+        const currentIndex = Math.round(scrollLeft / cardWidth);
+        const nextIndex = (currentIndex + 1) % testimoniosData.length;
+        const nextScroll = nextIndex * cardWidth;
 
-        if (nextScroll >= scrollWidth - 10) {
+        if (nextIndex === 0) {
           carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
         } else {
           carouselRef.current.scrollTo({
@@ -36,13 +37,13 @@ export default function TestimonialsCarousel() {
     <div className="relative">
       <div
         ref={carouselRef}
-        className="flex gap-4 overflow-x-auto scrollbar-hide pb-4"
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto scrollbar-hide pb-4"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {testimoniosData.map((testimonio, index) => (
           <article
             key={index}
-            className="min-w-[300px] flex-shrink-0 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:min-w-[350px]"
+            className="min-w-[300px] flex-shrink-0 snap-start rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:min-w-[350px]"
           >
             <div className="mb-4 flex items-center gap-4">
               <div className="relative h-12 w-12 overflow-hidden rounded-full">

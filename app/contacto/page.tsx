@@ -280,7 +280,7 @@ export default function ContactoPage() {
               </li>
               <li>
                 <span className="font-medium">Correo: </span>
-                contacto@clinicaauto.com
+                angelmelo.dev@gmail.com
               </li>
               <li>
                 <span className="font-medium">Dirección: </span>

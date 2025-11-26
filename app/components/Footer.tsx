@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-const developerSignature = "GPT-5.1 Codex";
-
 const whatsappLink =
   "https://wa.me/573054226304?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios.";
 
@@ -21,7 +19,7 @@ export default function Footer() {
               Tel: (604) 123 45 67
             </p>
             <p className="text-sm text-neutral-400">
-              contacto@clinicaauto.com
+              angelmelo.dev@gmail.com
             </p>
           </div>
 
@@ -90,7 +88,6 @@ export default function Footer() {
 
         <div className="mt-8 border-t border-neutral-800 pt-8 text-center text-sm text-neutral-400">
           <p>© {year} Clínica Automotriz. Todos los derechos reservados.</p>
-          <p className="mt-1">Sitio desarrollado por {developerSignature}</p>
         </div>
       </div>
     </footer>

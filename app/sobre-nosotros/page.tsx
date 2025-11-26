@@ -30,8 +30,8 @@ const timeline = [
 
 const teamPhotos = [
   {
-    name: "Laura Álvarez",
-    role: "Directora operativa",
+    name: "Luis Álvarez",
+    role: "Director operativo",
     image:
       "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80",
   },
@@ -42,7 +42,7 @@ const teamPhotos = [
       "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
   },
   {
-    name: "Valentina Gómez",
+    name: "Valentín Gómez",
     role: "Experiencia al cliente",
     image:
       "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=600&q=80",
@@ -150,10 +150,10 @@ export default function SobreNosotrosPage() {
       </section>
 
       <section className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-800 to-amber-700 px-8 py-12 text-white">
-        <h2 className="text-3xl font-semibold">Agenda tu visita</h2>
+        <h2 className="text-3xl font-semibold">¿Quieres una página web así?</h2>
         <p className="mt-3 text-neutral-100">
-          Conversemos por WhatsApp y arma un plan de mantenimiento personalizado
-          para tu vehículo o tu flota corporativa.
+          Contáctame a mi WhatsApp y te ayudo a crear una página web profesional
+          para tu negocio.
         </p>
         <div className="mt-6 flex flex-wrap gap-4">
           <a
@@ -162,7 +162,7 @@ export default function SobreNosotrosPage() {
             rel="noreferrer"
             className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-amber-100"
           >
-            Escríbenos por WhatsApp
+            Escríbeme por WhatsApp
           </a>
           <Link
             href="/contacto"
