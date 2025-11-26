@@ -17,11 +17,11 @@ const carouselImages = [
     alt: "Herramientas de diagnóstico automotriz",
   },
   {
-    src: "https://images.unsplash.com/photo-1606664515529-9c4d0b0c4a8a?auto=format&fit=crop&w=1200&q=80",
+    src: "https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=80",
     alt: "Servicio de detailing profesional",
   },
   {
-    src: "https://images.unsplash.com/photo-1606664515529-9c4d0b0c4a8a?auto=format&fit=crop&w=1200&q=80",
+    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
     alt: "Vehículo en proceso de reparación",
   },
 ];
