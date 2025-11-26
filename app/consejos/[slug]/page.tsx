@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type PageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }> | { slug: string };
 };
 
 const consejosData = consejos as Consejo[];
@@ -15,8 +15,9 @@ export function generateStaticParams() {
   return consejosData.map((consejo) => ({ slug: consejo.slug }));
 }
 
-export function generateMetadata({ params }: PageProps) {
-  const consejo = consejosData.find((item) => item.slug === params.slug);
+export async function generateMetadata({ params }: PageProps) {
+  const resolvedParams = await params;
+  const consejo = consejosData.find((item) => item.slug === resolvedParams.slug);
   if (!consejo) {
     return {
       title: "Artículo no encontrado",
@@ -29,8 +30,9 @@ export function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default function ConsejoDetallePage({ params }: PageProps) {
-  const consejo = consejosData.find((item) => item.slug === params.slug);
+export default async function ConsejoDetallePage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const consejo = consejosData.find((item) => item.slug === resolvedParams.slug);
 
   if (!consejo) {
     notFound();

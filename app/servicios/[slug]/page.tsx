@@ -5,7 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type PageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }> | { slug: string };
 };
 
 type Faq = {
@@ -21,8 +21,9 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const servicio = serviciosData.find((item) => item.slug === params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const servicio = serviciosData.find((item) => item.slug === resolvedParams.slug);
   if (!servicio) {
     return {
       title: "Servicio no encontrado",
@@ -35,8 +36,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function ServicioDetallePage({ params }: PageProps) {
-  const servicio = serviciosData.find((item) => item.slug === params.slug);
+export default async function ServicioDetallePage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const servicio = serviciosData.find((item) => item.slug === resolvedParams.slug);
 
   if (!servicio) {
     notFound();
