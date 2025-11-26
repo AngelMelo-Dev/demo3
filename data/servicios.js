@@ -142,6 +142,10 @@ export const servicios = [
   },
 ];
 
+/**
+ * @param {string} slug
+ * @returns {Servicio | undefined}
+ */
 export function getServicioBySlug(slug) {
   return servicios.find((servicio) => servicio.slug === slug);
 }

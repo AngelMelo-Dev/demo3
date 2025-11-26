@@ -49,6 +49,10 @@ export const consejos = [
   },
 ];
 
+/**
+ * @param {string} slug
+ * @returns {Consejo | undefined}
+ */
 export function getConsejoBySlug(slug) {
   return consejos.find((consejo) => consejo.slug === slug);
 }
